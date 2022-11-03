@@ -1,0 +1,55 @@
+---
+title: "My First Post"
+date: 2022-11-02T20:59:02-05:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["first"]
+author: "Me"
+# author: ["Me", "You"] # multiple authors
+showToc: true
+TocOpen: false
+draft: true
+hidemeta: false
+comments: true
+description: "Desc Text."
+canonicalURL: "https://canonical.url/to/page"
+disableHLJS: true # to disable highlightjs
+disableShare: false
+disableHLJS: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
+cover:
+    image: "<image path/url>" # image path/url
+    alt: "<alt text>" # alt text
+    caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
+editPost:
+    URL: "https://github.com/poldarreldev/darrelpol.dev/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+---
+
+So today I decided to start a blog. Finally! For almost 10 years in software development, creating a blog is one of the things that I really really want to do. I want to have some way to share my knowledge and document all the things I'm learning everyday. This is also going to be my way to talk to myself and make sense out of things.
+
+For my content, I think I wanna focus on things that can help me be a true technical leader. I wanna cover things like, digital transformation, cloud infrastractures, software architectures and design patterns, big data and even creating habits that can help you be a good developer and a leader. I think I also want to cover things like career progressions, my thoughts on a book I just finished or podcast that I've listen to. But really, anything that I think will help me improve my career, my life as a software developer and just to clear my mind. 
+
+There's a lot of things that I want to cover but I'll park them for now because I think as a first blog, it's very important to introduce myself and talk about why I'm doing this. :smile:
+
+So my name is Darrel Pol, I've been in the industry for almost 10 years (as of this writing). I have been on different industries such as data processing, logistics, academics (yes, I was a college professor for almost 2 years teaching computer science), procurement and government sector, block chain, internet of things (IoT), and the latest industry I've joined in is InsurTech. If you're wondering about my tech stack, I suggest you visit this stack share link(https://stackshare.io/poldarreldev/darrels-tech-stack) to see the specific technologies I'm familiar with. 
+
+I'm not really sure how much information I should share here but I guess I can use this opportunity as a first blog to talk about what really motivated me to start documenting. In my head, I really want to learn and master Amazon Web Services or AWS. I know, I can do that by taking online courses (which I am doing also by the way) but as I go through the courses, I often found myself bored and unmotivated. I'm guessing it's because of the long videos of theories and definitions and sometimes, it's really just a lot of information. Throughout my career, I noticed that I learn very fast through experience, experimenting and trial and error. So I thought, instead of waiting for me to finish the course, maybe I should just start a project and learn AWS in-depth through hands-on experience. While working on this project of mine, I thought maybe I could blog my journey so that when people ask me about what my AWS experience is, I could just send them a link and actually see my work. I know it's not going to be easy but I already have a plan and I think it will work :crossed_fingers:.
+
+I'm very excited about what's ahead for me and I think having this blog to document my journey will help me improve my skills and knowledge and I'm also hoping that I can help one or two developers in the future. 
+
+If you're interested on this journey of mine, you can follow me on LinkedIn (https://www.linkedin.com/in/darrelpol/) or on twitter(https://twitter.com/darrelpoldev). These are the platforms that I personally use everyday and I'm planning to use it to get more reach. 
+
+Lastly, I want to thank you for your time reading this and I hope to see you again. 
+
+-Darrel Pol
