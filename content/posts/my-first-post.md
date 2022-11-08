@@ -1,5 +1,5 @@
 ---
-title: "My First Post"
+title: "It all begins with a small step"
 date: 2022-11-02T20:59:02-05:00
 # weight: 1
 # aliases: ["/first"]
@@ -8,7 +8,7 @@ author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
 TocOpen: false
-draft: true
+draft: false
 hidemeta: false
 comments: true
 description: "Desc Text."
@@ -52,4 +52,4 @@ If you're interested on this journey of mine, you can follow me on LinkedIn (htt
 
 Lastly, I want to thank you for your time reading this and I hope to see you again. 
 
--Darrel Pol
+- Darrel Pol
