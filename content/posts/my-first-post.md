@@ -11,10 +11,10 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: true
-description: "Desc Text."
-canonicalURL: "https://canonical.url/to/page"
+description: "My first post."
+canonicalURL: "http://blog.darrelpol.com/posts/my-first-post/"
 disableHLJS: true # to disable highlightjs
-disableShare: false
+disableShare: true
 disableHLJS: false
 hideSummary: false
 searchHidden: true
