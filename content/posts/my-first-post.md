@@ -12,7 +12,7 @@ draft: false
 hidemeta: false
 comments: true
 description: "My first post."
-canonicalURL: "http://blog.darrelpol.com/posts/my-first-post/"
+canonicalURL: "https://blog.darrelpol.com/posts/my-first-post/index.html"
 disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
