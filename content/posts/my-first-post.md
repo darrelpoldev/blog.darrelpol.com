@@ -52,4 +52,4 @@ If you're interested on this journey of mine, you can follow me on LinkedIn (htt
 
 Lastly, I want to thank you for your time reading this and I hope to see you again. 
 
-- Darrel Pol
+\- Darrel Pol
