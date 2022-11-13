@@ -17,7 +17,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: darrelpol.com
-  description: "My personal blog. I talk about Tech, Productivity and Habit creation."
+  description: "Hi there \U0001F44B! Welcome to my blog, where I talk Tech, Productivity, and Habit Creations."
   keywords: [Blog, Portfolio, PaperMod]
   author: Darrel Pol
   # author: ["Me", "You"] # multiple authors
@@ -30,13 +30,13 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
-  disableScrollToTop: false
-  comments: false
+  disableScrollToTop: true
+  comments: true
   hidemeta: false
   hideSummary: false
   showtoc: false
@@ -58,23 +58,23 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    enabled: true # needs to be explicitly set
+    title: Darrel Pol
+    subtitle: "Hi there \U0001F44B! Welcome to my blog, where I talk Tech, Productivity, and Habit Creations."
+    imageUrl: "/profile_picture.jpeg"
+    imageWidth: 300
+    imageHeight: 300
+    imageTitle: darrel pol profile picture
     buttons:
       - name: Posts
         url: posts
-      - name: Tags
-        url: tags
+      # - name: Tags
+      #   url: tags
 
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog, where I talk Tech, Productivity Hacks and Habit Creations.
+    Content: Hi there \U0001F44B! Welcome to my blog, where I talk Tech, Productivity, and Habit Creations.
 
   socialIcons:
     - name: linkedin
@@ -115,14 +115,14 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
+    # - identifier: tags
+    #   name: tags
+    #   url: /tags/
+    #   weight: 20
     - identifier: DarrelPol
       name: darrelpol.com
       url: http://blog.darrelpol.com
