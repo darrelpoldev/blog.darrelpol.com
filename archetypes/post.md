@@ -12,7 +12,7 @@ draft: true
 hidemeta: false
 comments: true
 description: ""
-canonicalURL: "https://canonical.url/to/page"
+canonicalURL: "https://blog.darrelpol.com/posts/{{ .Name }}"
 disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
