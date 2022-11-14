@@ -238,6 +238,6 @@ By looking at the response, your website should be available at http://localhost
 
 And voilà! You now have your own static website. **Congratulations**! 
 
-**But wait**, there's still a lot more to do if you want your website to be accessible by other people over the internet. On my next blog, I'll talk about how to host your static website using Amazon S3. For now, I recommend you exploring other themes or other Hugo features so that when you are ready to share your website to the people of the internet, you will have your favorite theme, customized with your name and texts! Bye for now, and I hope this helps! 
+**But wait**, there's still a lot more to do if you want your website to be accessible by other people over the internet. On my next blog, I'll talk about [how to host your static website using Amazon S3](../how-to-host-static-website-using-amazon-s3). For now, I recommend you exploring other themes or other Hugo features so that when you are ready to share your website to the people of the internet, you will have your favorite theme, customized with your name and texts! Bye for now, and I hope this helps! 
 
 \- Darrel Pol
