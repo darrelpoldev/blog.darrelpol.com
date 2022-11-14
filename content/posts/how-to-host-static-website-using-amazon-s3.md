@@ -1,0 +1,128 @@
+---
+title: "How to Host Static Website Using Amazon S3"
+date: 2022-11-13T21:15:49-06:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["#how-to", "#hugo"]
+author: "Me"
+# author: ["Me", "You"] # multiple authors
+showToc: true
+TocOpen: false
+draft: true
+hidemeta: false
+comments: true
+description: ""
+canonicalURL: "https://blog.darrelpol.com/posts/how-to-host-static-website-using-amazon-s3"
+disableHLJS: true # to disable highlightjs
+disableShare: true
+disableHLJS: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
+cover:
+    image: "<image path/url>" # image path/url
+    alt: "<alt text>" # alt text
+    caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
+editPost:
+    URL: "https://github.com/poldarreldev/darrelpol.dev/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+---
+Hello, again! Today, I'm going to talk about how to host a static website using Amazon S3. This is the 2nd part of my blog series, "***How to start blogging using Amazon S3 and Amazon CloudFront***". If you haven't read my previous blog, I suggest you to check out [How to Create a Static Website Using Hugo](../how-to-create-a-static-website-using-hugo). 
+
+On this tutorial, I'm going to generate our static pages using Hugo framework, but this guide should also apply to any other static page generator as long as you have your public files ready and accessible. 
+
+## Step 1: Build static pages (skip this step if you already have your static pages ready)
+In Hugo, it's very simple to build and generate the static pages. Make sure that you're inside your Hugo site and execute this command:
+```
+hugo -D
+```
+**NOTE:** `-D` includes content marked as draft
+
+The response should be something like this and the files should be on the `/public` folder:
+```
+Start building sites …
+hugo v0.105.0+extended linux/amd64 BuildDate=unknown
+
+                   | EN
+-------------------+-----
+  Pages            | 10
+  Paginator pages  |  0
+  Non-page files   |  0
+  Static files     |  0
+  Processed images |  0
+  Aliases          |  2
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Total in 117 ms
+```
+
+## Step 2: Create an AWS Account
+I'm not going to cover the details on how to do this step because I believe it's pretty straight forward. But I wanted to make sure you have an AWS account before moving forward because most of the services we're going to use on this and following tutorials revolves around AWS. So, go ahead and register at [AWS Console - Signup (amazon.com)](https://portal.aws.amazon.com/billing/signup#/start/email). 
+
+**NOTE:** AWS **requires credit card** when signing up. At this stage, you won't be paying anything yet. Uploading your static pages should still fall under the [Free Tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
+
+## Step 3: Create an S3 bucket
+Assuming you're already logged in to AWS, you can create your S3 bucket by searching "S3" on the search bar somewhere on your screen: 
+![amazon-s3-search](/amazon-s3-search.png)
+Select and click S3 on the list and then click the "**Create bucket**" button:
+![amazon-s3-new-bucket](/amazon-s3-new-bucket.png)
+### General Configuration
+For static website hosting, bucket names should be something that you can use as a domain or subdomain. You can use names like, `yourname.com`, `blog.yourname.com`, or whatever you can think of that ends with a top level domain like `.com`, `.org`, or etc. Keep in mind that bucket names **must be globally unique**, this means you cannot use what I've used here and what's already created by other people. For this demo, I'm going to use `blog.darrelpol.com`.
+![general-configuration-screen](/general-configuration-screen.png)
+
+### Block Public Access settings for this bucket
+By default, AWS denies any access to an S3 bucket. But for static website hosting, we have to make sure that our files are publicly accessible so that our users can see our contents. So, make sure that you uncheck "**Block all public access**" and you explicitly acknowledge this option on your bucket by checking the "I acknowledge" option.
+![block-public-access-settings-screen](/block-public-access-settings-screen.png)
+
+Once you've configured these two settings, other settings should be set to recommended or whatever is the default value or option. When you're ready, click the "**Create bucket**" and proceed to the next step. 
+
+## Step 4: Enable static website hosting
+To enable static website hosting on your bucket, go back to Amazon S3 and select the bucket you just created. Once you're in the details page, click the "**Properties**" tab and scroll down until you see the "**Static website hosting**" option. 
+![static-website-hosting-screen-1](/static-website-hosting-screen-1.png)
+
+Click "**Edit**" and set the following options:
+![static-website-hosting-2](/static-website-hosting-2.png)
+
+"**Index document**" should be whatever your blog's default page, and "**Error document**" should be the page when an error occurs on your website. Once you're ready, click "**Save changes**" and proceed to the next step.
+
+## Step 5: Add a bucket policy to grant public read access to your bucket
+Earlier, I mentioned that AWS denies all access to your S3 bucket by default. This pattern is called an ***implicit deny***. Even though we uncheck the "**Block all public access**" option on our bucket, it doesn't mean that anyone on the internet is *authorized* to access our contents. To authorize them, we have to ***explicitly allow*** public access to our bucket. To do that, go back to Amazon S3, and select your bucket. Once you're in the details page, click "**Permissions**" and scroll down until you see the "**Bucket policy**" option and click "**Edit**". Add the following JSON to the Policy text area and click "**Save changes**":
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::Bucket-Name/*"
+            ]
+        }
+    ]
+}
+```
+
+## Step 6: Upload your static pages
+Now that we've configured our bucket and added a bucket policy, we can now start uploading our static pages. Go back to Amazon S3 and select your bucket. Once you're in the details page, go to "**Objects**" tab and click "**Upload**" button. 
+
+## Step 7: Access your Bucket website endpoint
+Assuming that you've already uploaded all your static pages, you should now be able to access your static website using the bucket website endpoint. You can find it by going back to Amazon S3 and select your bucket. Once you're in the details page, go to "**Properties**" tab and scroll down until you see "**Static website hosting**". Copy the link below the "**Bucket website endpoint**" section and paste it on your browser.
+
+And there you have it, your static website should now be hosted on Amazon S3 and accessible via the bucket website endpoint. 
+
+Although, this is good and all, but I don't think you're going to share your blog using the bucket website endpoint. As you can see, it doesn't look like very friendly at all. You want your blog site to be accessible using a customized endpoint so that it can be easily remembered. On my next blog, I'm going to talk about how to get custom domain on Amazon Route 53. For now, play around with your static website and customize it to your liking. Until next time, thank you and I hope this helps! 
+
+\- Darrel Pol
