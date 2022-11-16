@@ -1,0 +1,67 @@
+---
+title: "How to Get Custom Domain on Amazon Route 53"
+date: 2022-11-15T21:06:07-06:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["#how-to", "#hugo", "#Route53", "#aws"]
+author: "Me"
+# author: ["Me", "You"] # multiple authors
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: false
+comments: true
+description: ""
+canonicalURL: "https://blog.darrelpol.com/posts/how-to-get-custom-domain-on-amazon-route-53"
+disableHLJS: true # to disable highlightjs
+disableShare: true
+disableHLJS: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
+cover:
+    image: "<image path/url>" # image path/url
+    alt: "<alt text>" # alt text
+    caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
+editPost:
+    URL: "https://github.com/poldarreldev/darrelpol.dev/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+---
+Hello, again! Now that you have your website running and is hosted on Amazon S3, assuming that you've followed my previous blog on [How to Host Static Website Using Amazon S3](../how-to-host-static-website-using-amazon-s3). Today, I'm going to talk about how we can get a custom domain using Amazon Route 53. This is the 3rd and continuation of my "***How to start blogging using Amazon S3 and Amazon CloudFront***" blog series. 
+
+Getting a custom domain using Amazon Route 53 is very easy. Depending on the top level domain of your choice, you can get as low as 12 USD. On this tutorial, I'm going to use `.com` since it's cheap and is very suitable for a portfolio and blogging site. 
+
+Once you're logged in to your AWS account, search and select **Route 53** on the list of services and follow the steps below.
+
+## Register a domain
+![4-register-a-domain](/4-register-a-domain.png)
+
+## Domain Search
+This is the step when you decide what domain to choose. I decide to go with `darrelpol.org` (for the sake of example) as a domain, since I'm using this website for blogging and portfolio. You can click the "**Check**" button and AWS will check the availability of your domain on the entire internet. 
+![4-domain-search](/4-domain-search.png)
+Add to cart the domain name you've chosen and proceed to the next step.
+
+## Contact Details
+A domain name registrant is an individual or entity who registers a domain name. In this case, it's you, so just add your name and contact details and proceed to the next step.
+![4-contact-details](/4-contact-details.png)
+
+## Verify & Purchase
+The final step is to verify that all your information is correct. You also have an option if you want to automatically renew your domain after a year or not. 
+![4-verify-and-purchase](/4-verify-and-purchase.png)
+
+Once you've checked all the details and verified they're correct, click "**Complete Order**" button and wait for 10 mins or so. You'll receive a couple of emails while your domain is being registered, but aside from that, you're now an owner of a custom domain. **Congratulations**! 
+
+On my next blog, I'm going to talk about How to provision and deploy public SSL/TLS certificates using AWS Certificate Manager. Until next time, thanks for reading! 
+
+\- Darrel
+
+
+

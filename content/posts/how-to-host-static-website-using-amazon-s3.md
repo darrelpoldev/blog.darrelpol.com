@@ -3,7 +3,7 @@ title: "How to Host Static Website Using Amazon S3"
 date: 2022-11-13T21:15:49-06:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["#how-to", "#hugo"]
+tags: ["#how-to", "#hugo", "#aws", "S3"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
@@ -123,6 +123,6 @@ Assuming that you've already uploaded all your static pages, you should now be a
 
 And there you have it, your static website should now be hosted on Amazon S3 and accessible via the bucket website endpoint. 
 
-Although, this is good and all, but I don't think you're going to share your blog using the bucket website endpoint. As you can see, it doesn't look like very friendly at all. You want your blog site to be accessible using a customized endpoint so that it can be easily remembered. On my next blog, I'm going to talk about how to get custom domain on Amazon Route 53. For now, play around with your static website and customize it to your liking. Until next time, thank you and I hope this helps! 
+Although, this is good and all, but I don't think you're going to share your blog using the bucket website endpoint. As you can see, it doesn't look like very friendly at all. You want your blog site to be accessible using a customized endpoint so that it can be easily remembered. On my next blog, I'm going to talk about [how to get custom domain on Amazon Route 53](../how-to-get-custom-domain-on-amazon-route-53). For now, play around with your static website and customize it to your liking. Until next time, thank you and I hope this helps! 
 
 \- Darrel Pol
