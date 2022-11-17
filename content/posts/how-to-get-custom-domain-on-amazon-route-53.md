@@ -59,7 +59,7 @@ The final step is to verify that all your information is correct. You also have 
 
 Once you've checked all the details and verified they're correct, click "**Complete Order**" button and wait for 10 mins or so. You'll receive a couple of emails while your domain is being registered, but aside from that, you're now an owner of a custom domain. **Congratulations**! 
 
-On my next blog, I'm going to talk about How to provision and deploy public SSL/TLS certificates using AWS Certificate Manager. Until next time, thanks for reading! 
+On my next blog, I'm going to talk about [How to provision and deploy public SSL/TLS certificates using AWS Certificate Manager](../how-to-provision-and-deploy-public-certificates). Until next time, thanks for reading! 
 
 \- Darrel
 
