@@ -1,5 +1,5 @@
 ---
-title: "How to provision and deploy public SSL/TLS certicate using AWS Certificate Manager"
+title: "How to provision and deploy public SSL/TLS certificate using AWS Certificate Manager"
 date: 2022-11-16T21:25:25-06:00
 # weight: 1
 # aliases: ["/first"]
