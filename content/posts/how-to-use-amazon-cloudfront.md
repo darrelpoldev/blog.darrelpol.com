@@ -1,0 +1,77 @@
+---
+title: "How to use Amazon CloudFront - a Low-Latency Content Delivery Network (CDN) to serve a static website hosted on Amazon S3"
+date: 2022-11-17T21:21:17-06:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["how-to", "hugo", "aws", "cloudFront"]
+author: "Me"
+# author: ["Me", "You"] # multiple authors
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: false
+comments: true
+description: ""
+canonicalURL: "https://blog.darrelpol.com/posts/how-to-use-amazon-cloudfront"
+disableHLJS: true # to disable highlightjs
+disableShare: true
+disableHLJS: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
+cover:
+    image: "<image path/url>" # image path/url
+    alt: "<alt text>" # alt text
+    caption: "<text>" # display caption under cover
+    relative: false # when using page bundles set this to true
+    hidden: true # only hide on current single page
+editPost:
+    URL: "https://github.com/poldarreldev/darrelpol.dev/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+---
+Hello, it's me again! We've finally reached the last and final blog for my "***How to start blogging using Amazon S3 and Amazon CloudFront***" blog series. Previously, I've talked about [How to provision and deploy public SSL/TLS certificates using AWS Certificate Manager](../how-to-provision-and-deploy-public-certificates). Today, I'm going to connect all the dots and show how to use Amazon CloudFront to serve our static website hosted on Amazon S3. 
+
+Before we proceed, I just want to clarify that this solution only works if you are okay exposing your S3 bucket to the public. Meaning, anyone on the internet can access your content since your bucket is public. So, ***make sure that all data on your website is meant to be publicly available***. 
+
+To start with Amazon CloudFront, we first need to create a distribution. To do that, login to your AWS Account and search for "**CloudFront**" and click "**Create distribution**". For this tutorial, I'm going to through the options that you need to change. For the rest of the option, leave it by default or as recommended.
+
+## Origin Domain
+For this step, you first have to know what is your bucket website endpoint. You can get your bucket website endpoint by going to your S3 bucket, under "**Properties**", scroll down until you find the option "**Static website hosting**". Checkout my blog about [How to Host Static Website Using Amazon S3](../how-to-host-static-website-using-amazon-s3) to know more about Static website hosting. 
+
+Once you have your bucket website endpoint, use that as the **origin domain**. Note that you have to paste or manually type your bucket website endpoint. There is a difference between this endpoint which uses dash(-) and the endpoint that uses dot(.). See [Website endpoints](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html) for more details.
+![6-Origin-domain](/6-Origin-domain.png)
+For the "**Protocol**" option, choose **HTTPS** only. This will make sure CloudFront uses only HTTPS to access the origin you set. 
+
+**NOTE:** Make sure that you set a name for this origin.
+
+## Default cache behavior
+On this step, make sure that you set **Viewer protocol policy** to *Redirect HTTP to HTTPS*. This will make sure that your visitors will be redirected to a secured HTTPS connection even if they type HTTP intentionally. 
+![6-default-cache-behavior](/6-default-cache-behavior.png)
+
+Another option that you have to be aware of is the **Cache key and origin requests**. On this option, you have to make sure that you choose the *recommended* option, as you can see on the screenshot below:
+![6-cache-key-and-origin-requests](/6-cache-key-and-origin-requests.png)
+Set *CachingDisabled* on **Cache policy** option if you want to immediately see the updates on your website as soon as you publish a blog or any changes on your website. In my case, I prefer this option for now, since I don't think many people would visit my website that could cause a slowness. Once I have huge visitors (as if that's going to happen), I'll come back here and enable caching, but for now, this is okay. 
+
+## Settings and SSL Certificate
+Now that we have set the caching policy, the next option we need to set is the **Price Class**. In my case, I chose **Use only North America and Europe** because of the same reason I mentioned before. I can adjust this as my visitors grow. Also, this will help you lower the cost on the early stages of your blogging journey. 
+![6-settings](/6-settings.png)
+The last option we need to set is to configure the SSL certificate. If you've followed my blog about [How to provision and deploy public SSL/TLS certificates using AWS Certificate Manager](../how-to-provision-and-deploy-public-certificates), you should be able to see your certificate on the *Custom SSL certificate* dropdown list. Once you've set the certificate, you can now click the "**Create distribution**" button
+
+**NOTE:** Creating and deploying your distribution takes time. Mine took 10 minutes, so you can grab a coffee or take a break while you wait for your distribution to be deployed. Proceed to the next step once the status of your distribution is "**Enabled**".
+
+## Routing your custom domain to your CloudFront distribution
+Now that we have our CloudFront distribution setup, we can now create a Route 53 record to route our custom domain to our distribution. If you don't have a custom domain yet, make sure to check out my blog about [How to Get Custom Domain on Amazon Route 53](../how-to-get-custom-domain-on-amazon-route-53). 
+
+Once you're ready, search and select for Route 53 and select your custom domain. Once you're in the hosted zone details page, click "**Create record**". 
+![6-create-record](/6-create-record.png)
+For the record name, you can leave it blank if you want to create a record for the root domain. In my case, I added `blog` because I wanted my readers to visit my blog at `blog.darrepol.com`. Next, toggle "**Alias**" to true and then on the "**Route traffic to**" option, select "*Alias to CloudFront distribution*". A search box should appear which allows you to select your created CloudFront distribution. When you're done, click "**Create records**". Once finished, the newly created record should show on your hosted zone's record list. Wait for a few minutes, and you should now be able to access your static website using your custom domain. 
+
+And there you have it! **Congratulations!** You are now hosting your static website using Amazon S3 and Amazon CloudFront. This completes my blog series which I enjoyed writing, and I hope you learn from it. Until next time, see yah!
+
+\- Darrel
