@@ -1,9 +1,9 @@
 ---
-title: "How to Host Static Website Using Amazon S3"
+title: "How to host static website using Amazon S3 - Cloud Object Storage"
 date: 2022-11-13T21:15:49-06:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["#how-to", "#hugo", "#aws", "S3"]
+tags: ["how-to", "hugo", "aws", "S3"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true

@@ -3,7 +3,7 @@ title: "How to Create a Static Website Using Hugo"
 date: 2022-11-12T18:20:05-06:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["#how-to", "#hugo"]
+tags: ["how-to", "hugo"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true

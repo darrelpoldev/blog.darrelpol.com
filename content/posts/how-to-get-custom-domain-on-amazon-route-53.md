@@ -3,7 +3,7 @@ title: "How to Get Custom Domain on Amazon Route 53"
 date: 2022-11-15T21:06:07-06:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["#how-to", "#hugo", "#Route53", "#aws"]
+tags: ["how-to", "hugo", "Route53", "aws"]
 author: "Me"
 # author: ["Me", "You"] # multiple authors
 showToc: true
