@@ -1,4 +1,4 @@
-baseURL: "https://blog.darrelpol.com/"
+baseURL: "https://darrelpol.com/"
 title: Darrel Pol
 paginate: 5
 theme: PaperMod
@@ -101,7 +101,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/blog.darrelpol.com/tree/main/content"
+    URL: "https://github.com/darrelpol.com/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -127,7 +127,7 @@ menu:
     #   weight: 20
     - identifier: DarrelPol
       name: darrelpol.com
-      url: https://blog.darrelpol.com
+      url: https://darrelpol.com
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
