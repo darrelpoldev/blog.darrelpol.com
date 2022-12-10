@@ -1,4 +1,4 @@
-baseURL: "http://blog.darrelpol.com/"
+baseURL: "https://blog.darrelpol.com/"
 title: Darrel Pol
 paginate: 5
 theme: PaperMod
@@ -127,7 +127,7 @@ menu:
     #   weight: 20
     - identifier: DarrelPol
       name: darrelpol.com
-      url: http://blog.darrelpol.com
+      url: https://blog.darrelpol.com
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
