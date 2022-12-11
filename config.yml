@@ -121,14 +121,10 @@ menu:
     #   name: categories
     #   url: /categories/
     #   weight: 10
-    # - identifier: tags
-    #   name: tags
-    #   url: /tags/
-    #   weight: 20
-    - identifier: DarrelPol
-      name: darrelpol.com
-      url: https://darrelpol.com
-      weight: 30
+    - identifier: ko-fi
+      name: Buy me a Coffee!
+      url: https://ko-fi.com/darrelpol
+      weight: 20
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
