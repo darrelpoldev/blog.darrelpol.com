@@ -25,7 +25,6 @@ params:
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
-
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
@@ -35,7 +34,7 @@ params:
   ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
-  disableScrollToTop: true
+  disableScrollToTop: false
   comments: true
   hidemeta: false
   hideSummary: false
