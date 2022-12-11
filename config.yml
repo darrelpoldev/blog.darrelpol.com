@@ -84,6 +84,8 @@ params:
       url: "https://github.com/darrelpoldev"
     - name: twitter
       url: "https://twitter.com/darrelpoldev"
+    - name: kofi
+      url: "https://ko-fi.com/darrelpol"  
 
 
   # analytics:
