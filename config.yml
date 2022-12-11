@@ -68,8 +68,8 @@ params:
     buttons:
       - name: Posts
         url: posts
-      # - name: Tags
-      #   url: tags
+      - name: Tags
+        url: tags
 
   # home-info mode
   homeInfoParams:
@@ -134,8 +134,8 @@ pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
-    # anchorLineNos: true
+    anchorLineNos: true
     # codeFences: true
     # guessSyntax: true
-    # lineNos: true
+    lineNos: true
     # style: monokai
