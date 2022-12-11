@@ -1,6 +1,6 @@
 baseURL: "https://darrelpol.com/"
 title: Darrel Pol
-paginate: 5
+paginate: 10
 theme: PaperMod
 
 enableRobotsTXT: true
