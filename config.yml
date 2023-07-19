@@ -77,6 +77,8 @@ params:
     Content: Hi there \U0001F44B! Welcome to my blog, where I talk Tech, Productivity, and Habit Creations.
 
   socialIcons:
+    - name: email
+      url: "mailto:poldarrel@gmail.com"
     - name: linkedin
       url: "https://www.linkedin.com/in/darrelpol/"      
     - name: twitter
