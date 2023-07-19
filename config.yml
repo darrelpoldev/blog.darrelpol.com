@@ -78,7 +78,7 @@ params:
 
   socialIcons:
     - name: email
-      url: "mailto:poldarrel@gmail.com"
+      url: "mailto:poldarrel.dev@gmail.com"
     - name: linkedin
       url: "https://www.linkedin.com/in/darrelpol/"      
     - name: twitter
